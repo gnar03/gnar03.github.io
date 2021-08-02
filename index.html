@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+    <head>
+
+        <title>New Tab</title>
+
+        <script src="js/vendor/jquery-3.4.1.min.js"></script>
+
+        <link rel="manifest" href="webmanifest.json">
+        <link rel="stylesheet" href="css/bootstrap-reboot.css" media="none" onload="if(media!='all')media='all'">
+        <link rel="preload" href="css/main.css" as="style">
+        <link rel="preload" href="js/main.js" as="script">
+        <link rel="stylesheet" type='text/css' href="./font-awesome-4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/homepage.css"/>
+
+        <script>
+            $(document).ready(function() {
+                var currentTime = new Date().getHours();
+                if (0 <= currentTime && currentTime < 24) {
+                    if (document.body) {
+                        $('#background').addClass('bgday');
+                        document.body.className = " day1";
+                    }
+
+                } else {
+                    if (document.body) {
+                        $('#background').addClass('bgnight');
+                        document.body.className = " night";
+                        $('#datemobile').addClass('datemobilenight');
+                    }
+                }
+            });
+        </script>
+
+        <script>
+            $(document).ready(function () {
+
+                console.log('Retrieving updated time');
+
+                myVar24 = setInterval(setTime24, 500);
+
+            });
+        </script>
+
+        <script>
+            function inputFocus() {
+                document.getElementById("flexbox-input").focus();
+                $('#inputlabel').addClass('t-md-hidden t-top-hidden');
+                $('#suggestions-container').addClass('hidden');
+            }
+        </script>
+
+        <link rel="stylesheet" href="css/main.css">
+
+    </head>
+
+    <body style="background-color: #2A2A2E">
+        <script>
+            document.body.className += ' fade-out';
+            $(function () {
+                $('body').removeClass('fade-out');
+            });
+        </script>
+
+    	<center>
+        	<img src="img/ff-logo.png" style="vertical-align:middle;margin:290px 0px">
+	    </center>
+
+        <div id="info" align="right">
+
+            <div class="timeArea">
+                <p>
+                    <span id="time" class="time t-bottom2 t-sm" data-tooltip="Convert time" data-switch="b">
+                        <span id="hours"></span><span id="colon">:</span><span id="minutes"></span><span id="ampm"></span>
+                    </span>
+                    <span id="date" class="date t-top t-md" data-tooltip="Show Calendar"></span>
+                    <span id="datemobile" class="date datemobile"></span>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="flexbox" id="flexbox">
+
+            <form id="formstretch" action="#" method="post">
+
+                <label id="inputlabel" for="flexbox-input" class="t-top t-md t-md-hidden t-top-hidden" data-tooltip1="Enter a search query">
+                    <input type="search" id="flexbox-input" name="s" value="" placeholder=" Search..." autocomplete="off" spellcheck="false" autofocus>
+                </label>
+
+                <div id="searchbutton" onclick="inputFocus()">
+                    <img src="css/checkmark-green.gif" id="searchsubmit" class="hidden" alt="Search" title="Execute Search">
+                    <img src="css/cancel-red.gif" id="searchclear" class="hidden" alt="Clear" title="Clear Search">
+                </div>
+
+                <label id="optionlabel" for="flexbox-option" class="t-top t-sm" data-tooltip="Select Search Engine">
+
+                    <select id="flexbox-option" onchange="inputFocus()">
+                        <option value="sp" id="spselect">StartPage</option>
+                        <option value="searx" id="searxselect">SearX</option>
+                        <option value="ddg" id="ddgselect">DDG</option>
+                        <option value="brave"  id="braveselect">Brave</option>
+                        <option value="wiki" id="wikiselect">Wiki</option>
+                    </select>
+
+                </label>
+
+                <div id="suggestions-container" class="hidden">
+                    <ul class="search-suggestions" id="search-suggestions"></ul>
+                </div>
+
+            </form>
+
+        </div>
+
+        <style type="text/css" media="all">
+            .row
+            { text-align:center; margin-top: -125px;}
+            .row .column
+            { display: inline; letter-spacing:0.5em; }
+            .row .column a
+            { font-size: 400%; color:rgba(0,0,0,0) }
+            .row .column a:not(:hover)
+            { opacity:.5; transition: opacity .5s; }
+
+            .facebook-f     i{color:#78C5D7;}
+            .reddit-alien   i{color:#459BA8;}
+            .youtube-play   i{color:#79C268;}
+            .gamepad        i{color:#C5D747;}
+            .music          i{color:#F5D63D;}
+            .tv             i{color:#F48C33;}
+            .tv1            i{color:#E868A3;}
+            .download       i{color:#BF63A6;}
+            .user-secret    i{color:#2A2A2E;}
+        </style>
+
+        <div class="row">
+            <div class="column">
+                <a href="https://www.facebook.com/" class="facebook-f">
+                    <i class="fa fa-facebook-f"></i>
+                </a>
+            </div>
+            <div class="column">
+                <a href="https://www.reddit.com/" class="reddit-alien">
+                    <i class="fa fa-reddit-alien"></i>
+                </a>
+            </div>
+            <div class="column">
+                <a href="https://www.youtube.com/" class="youtube-play">
+                    <i class="fa fa-youtube-play"></i>
+                </a>
+            </div>
+            <div class="column">
+                <a href="https://www.playok.com/en/canasta/" class="gamepad">
+                    <i class="fa fa-gamepad"></i>
+                </a>
+            </div>
+            <div class="column">
+                <a href="https://slider.kz/" class="music">
+                    <i class="fa fa-music"></i>
+                </a>
+            </div>
+            <div class="column">
+                <a href="https://www6.f2movies.to/" class="tv">
+                    <i class="fa fa-tv"></i>
+                </a>
+            </div>
+            <div class="column">
+                <a href="https://kimcartoon.li/" class="tv1">
+                    <i class="fa fa-tv"></i>
+                </a>
+            </div>
+            <div class="column">
+                <a href="https://zooqle.com/" class="download">
+                    <i class="fa fa-cloud-download"></i>
+                </a>
+            </div>
+        </div>
+
+        <style>
+        footer {
+          text-align: center;
+          padding: 300px;
+          color: white;
+          font-size: 200%
+        }
+        </style>
+
+        <footer>
+                <a href="Y:\y.html" class="user-secret">
+                    <i class="fa fa-user-secret"></i>
+                </a>
+        </footer>
+
+        <aside class="overlay hidden" id="help">
+            <img src="css/cancel-red.gif" id="helpclear" alt="Clear" title="Close Help">
+        </aside>
+
+        <div id="calendarwrapper" ng-app="myApp" ng-controller="AppCtrl" class="hidden">
+            <div calendar class="calendar" id="calendar">
+                <img src="css/cancel-red.gif" id="calendarclear" alt="Clear" title="Close Calendar">
+            </div>
+        </div>
+
+
+        <script src="js/main.js"></script>
+
+        <script src="js/tilde.js" async></script>
+
+        <script src="js/vendor/angular.min.js"></script>
+
+        <script src="js/vendor/moment.min.js"></script>
+
+        <script src="js/calendar.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                if ($(window).width() < 480) {
+                    $('#help').addClass('hiddenscreen');
+                }
+            });
+        </script>
+
+        <script>
+            $(document).ready(function () {
+                if ($(window).height() < 900) {
+                    if ($(window).height() > 731) {
+                        $('#date').click(function () {
+                            $('#flexbox').addClass('flexboxresize');
+                            $('#calendarwrapper').removeClass('hidden');
+                        });
+                    };
+                };
+            });
+        </script>
+
+
+    </body>
+
+</html>
