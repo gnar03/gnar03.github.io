@@ -1,0 +1,21 @@
+{
+    "short_name": "Homepage",
+    "name": "Homepage",
+    "start_url": "index.html",
+    "icons": [
+        {
+            "src": "favicon.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "favicon.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "background_color": "#000000",
+    "theme_color": "#464646",
+    "display": "standalone",
+    "orientation": "portrait"
+}
