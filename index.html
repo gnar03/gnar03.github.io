@@ -2,46 +2,67 @@
 <html lang="en">
     <head>
 
+        <!--
+        My custom startpage.
+
+        I didn't make this since I don't know anything about code. I just combined 2 existing startpages, tried to understand part of the code through some googling and edited them to my liking. So there might be some redundant files and code in it that have no use.
+
+        The 2 startpages I used came from https://startpages.github.io/ and are the following:
+          - Homepage By seanvree & haltdev: https://seanvree.github.io/homepage/ - https://github.com/seanvree/homepage
+          - Start By allgenesconsidered: https://startpages.github.io/startpages/start-allgenesconsidered/ - https://github.com/allgenesconsidered/START
+
+        The looks I based on dark mode of default new tab on Firefox.
+
+        Use https://gnar03.github.io/ as startpage.
+
+        To place the cursor in the search bar of the page, use the extension Custom New Tabs: https://addons.mozilla.org/en-US/firefox/addon/custom-new-tabs/ (github: https://github.com/deadmund/Custom-New-Tab/wiki)
+
+        Feel free to use and edit to your liking.
+        -->
+
+        <!--page title-->
         <title>New Tab</title>
 
+        <!--js necessary for loading page-->
         <script src="js/vendor/jquery-3.4.1.min.js"></script>
 
-        <link rel="manifest" href="webmanifest.json">
+        <!--css necessary for search box-->
         <link rel="stylesheet" href="css/bootstrap-reboot.css" media="none" onload="if(media!='all')media='all'">
+
+        <!--css for time, date & search-->
         <link rel="preload" href="css/main.css" as="style">
+
+        <!--js for time, date & search-->
         <link rel="preload" href="js/main.js" as="script">
+
+        <!--css for icons-->
         <link rel="stylesheet" type='text/css' href="./font-awesome-4.5.0/css/font-awesome.min.css">
+
+        <!--css necessary for search box position-->
         <link rel="stylesheet" type="text/css" href="css/homepage.css"/>
 
+        <!--script necessary for text color of time & date-->
         <script>
             $(document).ready(function() {
                 var currentTime = new Date().getHours();
-                if (0 <= currentTime && currentTime < 24) {
+                {
                     if (document.body) {
                         $('#background').addClass('bgday');
                         document.body.className = " day1";
-                    }
-
-                } else {
-                    if (document.body) {
-                        $('#background').addClass('bgnight');
-                        document.body.className = " night";
-                        $('#datemobile').addClass('datemobilenight');
                     }
                 }
             });
         </script>
 
+        <!--script that retrieves the time-->
         <script>
             $(document).ready(function () {
-
                 console.log('Retrieving updated time');
-
                 myVar24 = setInterval(setTime24, 500);
-
             });
         </script>
 
+        <!--script for search suggestions-->
         <script>
             function inputFocus() {
                 document.getElementById("flexbox-input").focus();
@@ -50,11 +71,14 @@
             }
         </script>
 
+        <!--necessary for layout-->
         <link rel="stylesheet" href="css/main.css">
 
     </head>
 
+    <!--background of page-->
     <body style="background-color: #2A2A2E">
+        <!--fades out the screen when loading the page-->
         <script>
             document.body.className += ' fade-out';
             $(function () {
@@ -62,12 +86,14 @@
             });
         </script>
 
+      <!--firefox logo in center-->
     	<center>
         	<img src="img/ff-logo.png" style="vertical-align:middle;margin:290px 0px">
 	    </center>
 
+        <!--sets time & date right-->
         <div id="info" align="right">
-
+            <!--time & date object-->
             <div class="timeArea">
                 <p>
                     <span id="time" class="time t-bottom2 t-sm" data-tooltip="Convert time" data-switch="b">
@@ -77,24 +103,20 @@
                     <span id="datemobile" class="date datemobile"></span>
                 </p>
             </div>
-
         </div>
 
+        <!--search box object-->
         <div class="flexbox" id="flexbox">
-
             <form id="formstretch" action="#" method="post">
-
                 <label id="inputlabel" for="flexbox-input" class="t-top t-md t-md-hidden t-top-hidden" data-tooltip1="Enter a search query">
                     <input type="search" id="flexbox-input" name="s" value="" placeholder=" Search..." autocomplete="off" spellcheck="false" autofocus>
                 </label>
-
                 <div id="searchbutton" onclick="inputFocus()">
                     <img src="css/checkmark-green.gif" id="searchsubmit" class="hidden" alt="Search" title="Execute Search">
                     <img src="css/cancel-red.gif" id="searchclear" class="hidden" alt="Clear" title="Clear Search">
                 </div>
-
                 <label id="optionlabel" for="flexbox-option" class="t-top t-sm" data-tooltip="Select Search Engine">
-
+                    <!--search engine options-->
                     <select id="flexbox-option" onchange="inputFocus()">
                         <option value="sp" id="spselect">StartPage</option>
                         <option value="searx" id="searxselect">SearX</option>
@@ -102,17 +124,14 @@
                         <option value="brave"  id="braveselect">Brave</option>
                         <option value="wiki" id="wikiselect">Wiki</option>
                     </select>
-
                 </label>
-
                 <div id="suggestions-container" class="hidden">
                     <ul class="search-suggestions" id="search-suggestions"></ul>
                 </div>
-
             </form>
-
         </div>
 
+        <!--sets the icons positions & colours-->
         <style type="text/css" media="all">
             .row
             { text-align:center; margin-top: -125px;}
@@ -134,6 +153,7 @@
             .user-secret    i{color:#2A2A2E;}
         </style>
 
+        <!--sets the icons-->
         <div class="row">
             <div class="column">
                 <a href="https://www.facebook.com/" class="facebook-f">
@@ -177,6 +197,7 @@
             </div>
         </div>
 
+        <!--footer for additional icons if necessary-->
         <style>
         footer {
           text-align: center;
@@ -186,33 +207,37 @@
         }
         </style>
 
+        <!--additional icons in footer, change color and add link to activate-->
         <footer>
                 <a href="Y:\y.html" class="user-secret">
                     <i class="fa fa-user-secret"></i>
                 </a>
         </footer>
 
+        <!--cancel button-->
         <aside class="overlay hidden" id="help">
             <img src="css/cancel-red.gif" id="helpclear" alt="Clear" title="Close Help">
         </aside>
 
+        <!--calendar object-->
         <div id="calendarwrapper" ng-app="myApp" ng-controller="AppCtrl" class="hidden">
             <div calendar class="calendar" id="calendar">
                 <img src="css/cancel-red.gif" id="calendarclear" alt="Clear" title="Close Calendar">
             </div>
         </div>
 
-
+        <!--js for time, date & search-->
         <script src="js/main.js"></script>
 
+        <!--js for suggestions-->
         <script src="js/tilde.js" async></script>
 
+        <!--all 3 js for calendar-->
         <script src="js/vendor/angular.min.js"></script>
-
         <script src="js/vendor/moment.min.js"></script>
-
         <script src="js/calendar.js"></script>
 
+        <!--2 scripts that changes search box size when window changes depending on window size-->
         <script>
             $(document).ready(function () {
                 if ($(window).width() < 480) {
@@ -234,7 +259,5 @@
             });
         </script>
 
-
     </body>
-
 </html>
