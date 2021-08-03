@@ -8,7 +8,7 @@ The 2 startpages I used came from https://startpages.github.io/ and are the foll
 * Homepage By seanvree & haltdev: https://seanvree.github.io/homepage/ - https://github.com/seanvree/homepage
 * Start By allgenesconsidered: https://startpages.github.io/startpages/start-allgenesconsidered/ - https://github.com/allgenesconsidered/START
 
-The looks I based on dark mode of default new tab of Firefox.
+The looks I based on dark mode of default new tab on Firefox.
 
 Use https://gnar03.github.io/ as startpage.
 
