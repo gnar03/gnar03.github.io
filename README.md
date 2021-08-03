@@ -12,4 +12,6 @@ The looks I based on dark mode of default new tab of Firefox.
 
 Use https://gnar03.github.io/ as startpage.
 
+To place the cursor in the search bar of the page, use the extension Custom New Tabs: https://addons.mozilla.org/en-US/firefox/addon/custom-new-tabs/ (github: https://github.com/deadmund/Custom-New-Tab/wiki)
+
 Feel free to use and edit to your liking.
