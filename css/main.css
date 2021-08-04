@@ -66,7 +66,7 @@ body.fade-out {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-} 
+}
 
 .darkfilter {
     filter: brightness(75%);
@@ -501,7 +501,7 @@ li {
     transform: translateX(-50%);
     border-top: 8px solid #000;
     border-bottom: none;
-} 
+}
 
 [data-tooltip].t-top-hidden:after {
     bottom: 100%;
@@ -1043,8 +1043,16 @@ body.form .search-form {
     left: 0;
     position: static;
     margin-top: 1em;
-    margin-left: 100em;
+    margin-left: 1em;
     z-index: 1001;
+}
+
+.timeright{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: right;
+    margin-right: 3em;
 }
 
 #time {
@@ -2271,7 +2279,7 @@ i {
     pointer-events: none;
     -webkit-user-select: none;
     -moz-user-select: none;
-    user-select: none; 
+    user-select: none;
 }
 
 .pace-inactive {
@@ -2333,4 +2341,3 @@ i {
         transform: rotate(360deg);
     }
 }
-
