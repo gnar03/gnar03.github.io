@@ -3,7 +3,7 @@ var shiftDown = false;
 function setDate($) {
     //console.log('Retrieving updated time');
     var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-    months = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'August', 'Sep', 'Oct', 'Nov', 'Dec'],
+    months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     d = new Date(),
     currentDate = days[d.getDay()] + ' | ' + d.getDate() + '&nbsp;' + months[d.getMonth()],
     mins = (d.getMinutes() > 9) ? d.getMinutes() : '0' + d.getMinutes(),
@@ -192,7 +192,7 @@ $(function () {
     $('#helpclear').click(function (e) {
         $('#help').addClass('hidden');
     });
-    
+
     if ($(window).height() < 730) {
         $('#calendarwrapper').addClass('hiddenscreen');
         $('#date').addClass('hiddenscreen');
